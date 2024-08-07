@@ -1,0 +1,12 @@
+<div class="background-container">
+  <div
+    *ngFor="let circle of circles; let i = index"
+    [ngStyle]="circle.style"
+    class="circle"
+  ></div>
+  <div
+    *ngFor="let line of lines; let i = index"
+    [ngStyle]="line.style"
+    class="trail"
+  ></div>
+</div>

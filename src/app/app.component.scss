@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+  max-height: 100vh;
+  &__wrapp {
+    position: relative;
+    width: 100%;
+    max-width: 395px;
+    height: 100vh;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: var(--bg);
+  }
+  &__video {
+    position: relative;
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
