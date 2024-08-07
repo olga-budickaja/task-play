@@ -2,6 +2,7 @@
 
 :root {
   --bg: #eee5b1;
+  --text: #fff;
 }
 
 * {
@@ -23,10 +24,10 @@
   outline: 1px solid var(--bgLight);
 }
 
-html {
+* {
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 700;
   font-style: normal;
   letter-spacing: -1px;
-  font-size: 16px;
+  font-size: 14px;
 }

@@ -1,1 +1,27 @@
-<p>header works!</p>
+<div class="header">
+  <div class="header__info">
+    <div class="header__info_users">
+      <div
+        *ngFor="let user of users; let i = index"
+        class="header__info_item"
+        [style.left.px]="calculateOffset(i, users.length)"
+        [style.zIndex]="users.length - i"
+      >
+        <img [src]="user" alt="User" />
+      </div>
+    </div>
+
+    <button class="header__btn">
+      {{ buttonText }}
+      <span><img src="/icons/icon-3.png" alt="Coin" /></span>
+    </button>
+  </div>
+  <div class="header__icons">
+    <div class="header_icon">
+      <img src="/icons/icon-1.png" alt="Quantity" />
+    </div>
+    <div class="header_icon">
+      <img src="/icons/icon-2.png" alt="Quantity" />
+    </div>
+  </div>
+</div>

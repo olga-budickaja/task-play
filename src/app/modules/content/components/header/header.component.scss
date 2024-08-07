@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  gap: 25px;
+  &__info {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    background-color: var(--text);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+      0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+    gap: 10px;
+    &_users {
+      display: flex;
+      max-width: 240px;
+      flex-wrap: nowrap;
+    }
+    &_item {
+      position: relative;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  &__icons {
+    flex: 1;
+    align-self: flex-end;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    color: var(--text);
+    background: linear-gradient(
+      90deg,
+      rgba(254, 37, 52, 1) 0%,
+      rgba(226, 64, 105, 1) 35%,
+      rgba(203, 98, 174, 1) 100%
+    );
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+    &:hover {
+      filter: brightness(95%);
+      transform: scale(1.01);
+    }
+    img {
+      width: 15px;
+      height: 15px;
+      object-fit: cover;
+      margin-left: 5px;
+    }
+  }
+}
