@@ -28,7 +28,7 @@
 .trail {
   position: absolute;
   height: 1px;
-  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
   transform: rotate(-45deg); /* Задаємо кут повороту */
   transform-origin: left center; /* Встановлюємо точку початку трансформації */
   animation: trailEffect 0.5s infinite ease-in-out;

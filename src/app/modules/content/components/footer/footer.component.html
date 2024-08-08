@@ -1,1 +1,19 @@
-<p>footer works!</p>
+<footer class="footer">
+  <nav class="footer__nav">
+    <ul class="footer__menu">
+      <li
+        class="footer__menu_item"
+        *ngFor="let item of lists; let i = index"
+        [ngClass]="{ active: activeIndex === i }"
+        (click)="setActive(i)"
+      >
+        <a [routerLink]="item.link">
+          <img [src]="item.icon" alt="Menu Item" class="footer__menu_icon" />
+        </a>
+        <div class="footer__menu_wrapp">
+          <img src="/background/item-menu-1.png" class="wrapp" />
+        </div>
+      </li>
+    </ul>
+  </nav>
+</footer>
