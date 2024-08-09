@@ -91,7 +91,6 @@
   }
 }
 
-/* Встановлення конкретних анімацій для кожного елемента */
 .footer__menu_item:nth-child(1).active .wrapp,
 .footer__menu_item:nth-child(5).active .wrapp {
   animation: grow 0.25s ease-in-out forwards;
@@ -107,7 +106,7 @@
 }
 
 .footer__menu_item.active .footer__menu_icon {
-  animation: bounce 0.7s ease-in-out forwards;
+  animation: bounce 0.1s ease-in-out forwards;
 }
 
 /* Анімація стрибка */
@@ -116,43 +115,34 @@
   100% {
     transform: translateY(0) scale(1.2);
   }
-  30% {
+  15% {
     transform: translateY(-20px) scale(1.2);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.2);
-  }
-  70% {
-    transform: translateY(-15px) scale(1.2);
   }
 }
 
-/* Анімація зростання для першого та останнього елементів */
 @keyframes grow {
   0% {
     max-height: 0;
   }
   100% {
-    max-height: 120px; /* Максимальна висота для першого та останнього елементів */
+    max-height: 120px;
   }
 }
 
-/* Анімація зростання для другого та четвертого елементів */
 @keyframes growSecondAndFourth {
   0% {
     max-height: 0;
   }
   100% {
-    max-height: 84px; /* Максимальна висота для другого та четвертого елементів */
+    max-height: 84px;
   }
 }
 
-/* Анімація зростання для третього елемента */
 @keyframes growThird {
   0% {
     max-height: 0;
   }
   100% {
-    max-height: 75px; /* Максимальна висота для третього елемента */
+    max-height: 75px;
   }
 }
