@@ -4,4 +4,5 @@ export type User = {
   name: string;
   address: string;
   likes: number;
+  isShow: boolean | true;
 };

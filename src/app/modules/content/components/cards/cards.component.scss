@@ -15,22 +15,12 @@
     flex: 1;
     &_item {
       position: absolute;
-      // top: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 100%;
       padding: 15px 15px 20px 15px;
       background-color: var(--text);
       border-radius: 15px;
       box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.33);
-      &:nth-child(2) {
-        background-color: #bfbdbf;
-        width: 85%;
-      }
-      &:nth-child(3) {
-        background-color: #e5e4e5;
-        width: 95%;
-      }
     }
     &_image {
       position: relative;
@@ -62,7 +52,6 @@
       padding: 10px;
       color: var(--text);
       line-height: 15px;
-      // -webkit-text-stroke: 0.5px #3e3e4e;
     }
     &_text {
       display: flex;

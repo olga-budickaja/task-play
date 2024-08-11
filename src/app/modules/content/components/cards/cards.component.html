@@ -2,62 +2,88 @@
 <div class="content">
   <div class="content__wrapp">
     <div class="content__cards">
-      <div
-        class="content__cards_item"
+      <ng-container
         *ngFor="let user of users.slice(0, users.length / 2); let i = index"
-        [ngStyle]="{ top: getTopValue(i) + 'px' }"
       >
-        <div class="content__cards_image">
-          <img [src]="user.img" alt="User" class="content__cards_img" />
-          <div class="content__cards_desc">
-            <div class="content__cards_title">{{ user.name }}</div>
-            <div class="content__cards_text">
-              <span>{{ user.address }}</span>
-              <span>{{ user.likes }}</span>
+        <div
+          class="content__cards_item"
+          @rotateAndFlyLeft
+          *ngIf="user.isShow"
+          [ngStyle]="{
+            top: getTopValue(i, firstHalfUsers.length) + 'px',
+            width: getWidthValue(i, firstHalfUsers.length) + '%',
+            background: getBgValue(i, firstHalfUsers.length),
+            display: user.isShow ? 'block' : 'none'
+          }"
+        >
+          <div class="content__cards_image">
+            <img [src]="user.img" alt="User" class="content__cards_img" />
+            <div class="content__cards_desc">
+              <div class="content__cards_title">{{ user.name }}</div>
+              <div class="content__cards_text">
+                <span>{{ user.address }}</span>
+                <span>{{ user.likes }}</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="content__cards_buttons">
-          <button class="content__cards_btn">
-            <img src="/buttons/cards/button-1.png" alt="Button" />
-          </button>
-          <button class="content__cards_btn">
-            <img src="/buttons/cards/button-2.png" alt="Button" />
-          </button>
+          <div class="content__cards_buttons">
+            <button class="content__cards_btn">
+              <img src="/buttons/cards/button-1.png" alt="Button" />
+            </button>
+            <button
+              class="content__cards_btn"
+              (click)="removeLastCards('second')"
+            >
+              <img src="/buttons/cards/button-2.png" alt="Button" />
+            </button>
+          </div>
         </div>
-      </div>
+      </ng-container>
     </div>
 
     <div class="content__cards">
-      <div
-        class="content__cards_item"
+      <ng-container
         *ngFor="
           let user of users.slice(users.length / 2, users.length);
           let i = index
         "
-        [ngStyle]="{ top: getTopValue(i) + 'px' }"
       >
-        <div class="content__cards_image">
-          <img [src]="user.img" alt="User" class="content__cards_img" />
-          <div class="content__cards_desc">
-            <div class="content__cards_title">{{ user.name }}</div>
-            <div class="content__cards_text">
-              <span>{{ user.address }}</span>
-              <span>{{ user.likes }}</span>
+        <div
+          class="content__cards_item"
+          @rotateAndFlyRight
+          *ngIf="user.isShow"
+          [ngStyle]="{
+            top: getTopValue(i, secondHalfUsers.length) + 'px',
+            width: getWidthValue(i, secondHalfUsers.length) + '%',
+            background: getBgValue(i, secondHalfUsers.length),
+            display: user.isShow ? 'block' : 'none'
+          }"
+        >
+          <div class="content__cards_image">
+            <img [src]="user.img" alt="User" class="content__cards_img" />
+            <div class="content__cards_desc">
+              <div class="content__cards_title">{{ user.name }}</div>
+              <div class="content__cards_text">
+                <span>{{ user.address }}</span>
+                <span>{{ user.likes }}</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="content__cards_buttons">
-          <button class="content__cards_btn">
-            <img src="/buttons/cards/button-1.png" alt="Button" />
-          </button>
-          <button class="content__cards_btn">
-            <img src="/buttons/cards/button-2.png" alt="Button" />
-          </button>
+          <div class="content__cards_buttons">
+            <button class="content__cards_btn">
+              <img src="/buttons/cards/button-1.png" alt="Button" />
+            </button>
+            <button
+              class="content__cards_btn"
+              (click)="removeLastCards('first')"
+            >
+              <img src="/buttons/cards/button-2.png" alt="Button" />
+            </button>
+          </div>
         </div>
-      </div>
+      </ng-container>
     </div>
   </div>
 </div>
